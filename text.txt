@@ -2,3 +2,4 @@ hello git first commit 2022-7-1
 hi git github修改一次 实现pull更新本地代码 2022-7-1
 hello git_clone commit 分成员push到远程库
 夸团队协作 外来人员修改这个文档
+是跨团队 不是夸团队
