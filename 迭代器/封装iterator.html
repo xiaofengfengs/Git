@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>迭代器</title>
+</head>
+
+<body>
+  <script>
+    const Array = [
+      { id: 1, name: "小锋", done: true },
+      { id: 2, name: "小想", done: false },
+      { id: 3, name: "小闯", done: true },
+    ];
+
+    function createIterator(arr) {
+      let i = 0;
+      return {
+        next() {
+          const result = {
+            value: arr[i],
+            done: i >= arr.length - 1,
+          };
+          i++;
+          return result;
+        },
+      };
+    }
+    const iterator1 = createIterator(Array);
+    console.log("---------");
+    console.log("---------");
+    const iterator = Array[Symbol.iterator]();
+    let result = iterator.next();
+    while (!result.done) {
+      const item = result.value;
+      console.log(item);
+      result = iterator.next();
+    }
+    console.log("-------------");
+    for (const item of Array) {
+      console.log(item);
+    }
+  </script>
+</body>
+
+</html>
